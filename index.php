@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href=".">
                 <img src="gambar/webpro log.png" alt="" height="50px">
@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href=".">Home</a>
+                        <a class="nav-link" aria-current="page" href=".">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?m=kelas">Kelas</a>
@@ -29,7 +29,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?m=siswa">Siswa</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?m=mapel">Mapel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?m=guru">Guru</a>
+                    </li>
                 </ul>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href=".">Home</a></li>
+                        <li><a class="dropdown-item" href="?m=kelas">Kelas</a></li>
+                        <li><a class="dropdown-item" href="?m=siswa">Siswa</a></li>
+                        <li><a class="dropdown-item" href="?m=guru">Guru</a></li>
+                        <li><a class="dropdown-item" href="?m=mapel">Mapel</a></li>
+                    </ul>
+                </div>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -45,11 +63,12 @@
     <div class="fixed-bottom">
         <div class="card">
             <div class="card-body">
-                &copy; 2024-<?= date("Y")?> - Web Programming
-            </div>  
+                &copy; 2024-<?= date("Y") ?> - Web Programming
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>

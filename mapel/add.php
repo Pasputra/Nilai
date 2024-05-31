@@ -2,22 +2,19 @@
     <div class="row-12">
         <div class="card">
             <div class="card-header row">
-                <div class="card-title h3 col-8">Tambah Data Kelas</div>
+                <div class="card-title h3 col-8">Data Mapel</div>
                 <div class="col-4">
-                    <a href="?m=kelas&s=view" class="btn btn-large btn-primary float-end">Kembali</a>
+                    <a href="?m=mapel&s=view" class="btn btn-large btn-primary float-end">Kembali</a>
                 </div>
             </div>
 
             <div class="card-body">
-                <form action="?m=kelas&s=save" method="post">
+                <form action="?m=mapel&s=save" method="post">
                     <div class="mb-3">
-                        <input type="text" name="kelas" class="form-control" placeholder="Nama Kelas" required autofocus>
+                        <input type="text" name="mapel" class="form-control" placeholder="Nama Mapel" required autofocus>
                     </div>
                     <div class="mb-3">
-                        <input type="number" name="kapasitas" class="form-control" placeholder="Kapasitas" required  >
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" name="terisi" class="form-control" placeholder="Terisi" required>
+                        <input type="number" name="jam_pelajaran" class="form-control" placeholder="Jam Pelajaran" required  >
                     </div>
                     <div class="mb-3">
                         <input type="reset" class="btn btn-secondary">&nbsp;

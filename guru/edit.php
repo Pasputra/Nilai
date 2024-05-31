@@ -2,26 +2,26 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header row">
-                <div class="card-title h3 col-8">Edit Data Siswa</div>
+                <div class="card-title h3 col-8">Edit Data Guru</div>
                 <div class="col-4">
-                    <a href="?m=siswa&s=view" class="btn btn-lg btn-primary float-end">Kembali</a>
+                    <a href="?m=guru&s=view" class="btn btn-lg btn-primary float-end">Kembali</a>
                 </div>
             </div>
 <?php
 include_once('config.php');
 $id  = $_GET['id'];
-$sql = "SELECT * FROM siswa WHERE id='$id'";
+$sql = "SELECT * FROM guru WHERE id='$id'";
 $result = mysqli_query($con, $sql);
 $r=mysqli_fetch_assoc($result);
 ?>
 
             <div class="card-body">
-                <form action="?m=siswa&s=update" method="post" enctype="multipart/form-data">
+                <form action="?m=guru&s=update" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <input type="text" name="nis" value="<?= $r['nis']; ?>" class="form-control" placeholder="Nomor Induk Siswa" required>
+                        <input type="text" name="nip" value="<?= $r['nip']; ?>" class="form-control" placeholder="Nomor Induk Guru" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="nama" value="<?= $r['nama']; ?>" class="form-control" placeholder="Nama Siswa" required>
+                        <input type="text" name="nama" value="<?= $r['nama']; ?>" class="form-control" placeholder="Nama Guru" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Jenis Kelamin: &nbsp;</label>
@@ -35,20 +35,7 @@ $r=mysqli_fetch_assoc($result);
                         <input type="date" name="tanggal_lahir" value="<?= $r['tanggal_lahir']; ?>" class="form-control" placeholder="Tanggal Lahir">
                     </div>
                     <div class="mb-3">
-                        <select name="kelas_id" class="form-control" required>
-                            <option value="">Pilih Kelas</option>
-                            <?php
-                            include_once("config.php");
-                            $sql = "SELECT * FROM kelas";
-                            $result = mysqli_query($con, $sql);
-                            while ($r = mysqli_fetch_assoc($result)) {
-                                echo "<option value='" . $r ['id'] . "'>" . $r['kelas'] . "</option>";
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <img src="siswa/foto/<?= $r['foto']; ?>" alt="Gambar tidak ada" height="400px" title="Foto Sebelumnya">
+                        <img src="guru/foto/<?= $r['foto']; ?>" alt="Gambar tidak ada" height="400px" title="Foto Sebelumnya">
                     </div>
                     <div class="mb-3">
                         <label for="">Masukan Foto (Jika diganti)</label>

@@ -2,28 +2,25 @@
     <div class="row-12">
         <div class="card">
             <div class="card-header row">
-                <div class="card-title h3 col-8">Edit Data Kelas</div>
+                <div class="card-title h3 col-8">Data Mapel</div>
                 <div class="col-4">
-                    <a href="?m=kelas&s=view" class="btn btn-large btn-primary float-end">Kembali</a>
+                    <a href="?m=mapel&s=view" class="btn btn-large btn-primary float-end">Kembali</a>
                 </div>
             </div>
 <?php
 include_once('config.php');
 $id = $_GET['id'];
-$sql = "SELECT * FROM kelas WHERE id='$id'";
+$sql = "SELECT * FROM mapel WHERE id='$id'";
 $result = mysqli_query($con, $sql);
 $r=mysqli_fetch_assoc($result);
 ?>
             <div class="card-body">
-                <form action="?m=kelas&s=update" method="post">
+                <form action="?m=mapel&s=update" method="post">
                     <div class="mb-3">
-                        <input type="text" name="kelas" value="<?= $r['kelas']; ?>" class="form-control" placeholder="Nama Kelas" required autofocus>
+                        <input type="text" name="mapel" value="<?= $r['mapel']; ?>" class="form-control" placeholder="Nama Mapel" required autofocus>
                     </div>
                     <div class="mb-3">
-                        <input type="number" name="kapasitas" value="<?= $r['kapasitas']; ?>" class="form-control" placeholder="Kapasitas" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" name="terisi" value="<?= $r['terisi']; ?>" class="form-control" placeholder="Terisi" required>
+                        <input type="number" name="jam_pelajaran" value="<?= $r['jam_pelajaran']; ?>" class="form-control" placeholder="Jam Pelajaran" required>
                     </div>
                     <div class="mb-3">
                         <input type="hidden" name="id" value="<?= $r['id']; ?>">
